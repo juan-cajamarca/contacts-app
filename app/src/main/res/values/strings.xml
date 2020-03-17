@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Contacts</string>
+    <string name="cancel">Cancelar</string>
+    <string name="clean_data">Limpiar datos</string>
+    <string name="contact_name">Nombre Contacto</string>
+    <string name="contact_name_placeholder">Jhon David</string>
+    <string name="contact_phone">Teléfono</string>
+    <string name="contact_phone_placeholder">320 000 000</string>
+    <string name="delete_all">Eliminar todos</string>
+    <string name="family">Familia</string>
+    <string name="friend">Amigo</string>
+    <string name="group">Grupo</string>
+    <string name="invert_list">Invertir lista</string>
+    <string name="job">Trabajo</string>
+    <string name="list_contacts">Lista de contactos</string>
+    <string name="occasional">Ocasional</string>
+    <string name="save">Guardar</string>
+    <string name="sort_by_group">Ordenar por grupo</string>
+    <string name="sort_by_last_name">Ordenar por apellido</string>
+</resources>
