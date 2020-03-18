@@ -9,4 +9,8 @@
         android:id="@+id/generate_random_phone_number"
         android:title="@string/generate_random_phone_number" />
 
+    <item
+        android:id="@+id/clear_data_menu_item"
+        android:title="@string/clean_data"/>
+
 </menu>

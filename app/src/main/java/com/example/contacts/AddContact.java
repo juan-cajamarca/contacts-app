@@ -82,9 +82,27 @@ public class AddContact extends AppCompatActivity implements View.OnClickListene
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.name_in_capital_letters_menu_item:
+                if (contactName.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(this, "Please enter a name", Toast.LENGTH_LONG).show();
+                } else {
+                    contactName.setText(contactName.getText().toString().toUpperCase());
+                }
                 break;
             case R.id.generate_random_phone_number:
+                String phoneNumber = chooseRandomPhonePrefix();
+                for (int i = 0; i < 7; i++) {
+                    if (i == 0 || i == 3) {
+                        phoneNumber += " ";
+                    }
+                    int randomNumber = generateRandomNumber();
+                    phoneNumber += randomNumber;
+                }
+                contactPhone.setText(phoneNumber);
                 break;
+            case R.id.clear_data_menu_item:
+                contactName.setText("");
+                contactPhone.setText("");
+                groupSpinner.setSelection(0, true);
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -129,5 +147,29 @@ public class AddContact extends AppCompatActivity implements View.OnClickListene
         } else {
             Toast.makeText(this, "All fields are required", Toast.LENGTH_LONG).show();
         }
+    }
+
+    private String chooseRandomPhonePrefix() {
+        int min = 0;
+        int max = 2;
+        int random = (int) (Math.random() * (max - min + 1) + min);
+
+        switch (random) {
+            case 0:
+                return "300";
+            case 1:
+                return "310";
+            case 2:
+                return "320";
+            default:
+                return "301";
+        }
+    }
+
+    private int generateRandomNumber() {
+        int min = 0;
+        int max = 9;
+
+        return (int) (Math.random() * (max - min + 1) + min);
     }
 }
