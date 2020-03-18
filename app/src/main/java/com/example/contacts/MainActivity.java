@@ -2,21 +2,18 @@ package com.example.contacts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -75,6 +72,8 @@ public class MainActivity extends AppCompatActivity {
                 adapter.notifyDataSetChanged();
                 break;
             case R.id.invertListItem:
+                Collections.reverse(contacts);
+                adapter.notifyDataSetChanged();
                 break;
             default:
                 return super.onOptionsItemSelected(item);
