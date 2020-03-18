@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton floatingButton;
     ListView contactsListView;
+    ContactAdapter adapter;
     ArrayList<Contact> contacts;
 
     @Override
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             contacts = new ArrayList<Contact>();
         }
 
-        ContactAdapter adapter = new ContactAdapter(this, R.layout.listview_item, contacts);
+        adapter = new ContactAdapter(this, R.layout.listview_item, contacts);
 
         contactsListView = (ListView) findViewById(R.id.contactsListView);
         contactsListView.setAdapter(adapter);
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             case R.id.sortByGroupItem:
                 break;
             case R.id.deleteAllItem:
+                contacts.removeAll(contacts);
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.invertListItem:
                 break;
