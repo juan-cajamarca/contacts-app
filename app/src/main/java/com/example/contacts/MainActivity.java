@@ -34,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
             contacts = contactsFromAddContactActivity;
         } else {
             contacts = new ArrayList<Contact>();
+            contacts.add(new Contact("Xiomara Acuña", "546 546 4646", "Familia"));
+            contacts.add(new Contact("Miguel Ruiz", "546 546 4646", "Ocasional"));
+            contacts.add(new Contact("Pedro Arias", "300 112 2222", "Amigo"));
+            contacts.add(new Contact("Fernando Vargas", "546 546 4646", "Trabajo"));
+            contacts.add(new Contact("Luisa Gómez", "300 112 2222", "Amigo"));
+            contacts.add(new Contact("Jose Ruiz", "546 546 4646", "Ocasional"));
+            contacts.add(new Contact("Adrían Acosta", "546 546 4646", "Amigo"));
+            contacts.add(new Contact("Juan Cajamarca", "300 000 0000", "Ocasional"));
+            contacts.add(new Contact("Fabián Ramos", "546 546 4646", "Trabajo"));
         }
 
         adapter = new ContactAdapter(this, R.layout.listview_item, contacts);
@@ -64,8 +73,34 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.sortByLastNameItem:
+                for (int i = 0; i < contacts.size(); i++) {
+                    for (int j = i + 1; j < contacts.size(); j++) {
+                        if (contacts.get(i).getName().compareTo(contacts.get(j).getName()) > 0) {
+                            Contact temp = contacts.get(i);
+                            Contact aux = contacts.get(j);
+                            contacts.remove(temp);
+                            contacts.remove(aux);
+                            contacts.add(i, aux);
+                            contacts.add(j, temp);
+                        }
+                    }
+                }
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.sortByGroupItem:
+                for (int i = 0; i < contacts.size(); i++) {
+                    for (int j = i + 1; j < contacts.size(); j++) {
+                        if (contacts.get(i).getGroup().compareTo(contacts.get(j).getGroup()) > 0) {
+                            Contact temp = contacts.get(i);
+                            Contact aux = contacts.get(j);
+                            contacts.remove(temp);
+                            contacts.remove(aux);
+                            contacts.add(i, aux);
+                            contacts.add(j, temp);
+                        }
+                    }
+                }
+                adapter.notifyDataSetChanged();
                 break;
             case R.id.deleteAllItem:
                 contacts.removeAll(contacts);

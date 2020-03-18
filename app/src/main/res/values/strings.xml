@@ -18,5 +18,5 @@
     <string name="occasional">Ocasional</string>
     <string name="save">Guardar</string>
     <string name="sort_by_group">Ordenar por grupo</string>
-    <string name="sort_by_last_name">Ordenar por apellido</string>
+    <string name="sort_by_name">Ordenar por nombre</string>
 </resources>
