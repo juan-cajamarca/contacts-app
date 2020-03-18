@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Contacts</string>
     <string name="cancel">Cancelar</string>
+    <string name="change_name_to_capital_letters">Pasar nombre a mayúsculas</string>
     <string name="clean_data">Limpiar datos</string>
     <string name="contact_name">Nombre Contacto</string>
     <string name="contact_name_placeholder">Jhon David</string>
@@ -9,6 +10,7 @@
     <string name="delete_all">Eliminar todos</string>
     <string name="family">Familia</string>
     <string name="friend">Amigo</string>
+    <string name="generate_random_phone_number">Generar número de teléfono aleatorio</string>
     <string name="group">Grupo</string>
     <string name="invert_list">Invertir lista</string>
     <string name="job">Trabajo</string>

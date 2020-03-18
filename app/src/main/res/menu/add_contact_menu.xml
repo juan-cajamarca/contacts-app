@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/name_in_capital_letters_menu_item"
+        android:title="@string/change_name_to_capital_letters" />
+
+    <item
+        android:id="@+id/generate_random_phone_number"
+        android:title="@string/generate_random_phone_number" />
+
+</menu>
