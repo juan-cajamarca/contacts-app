@@ -27,9 +27,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Getting data from AddContact Activity
         Intent intent = getIntent();
         ArrayList<Contact> contactsFromAddContactActivity = intent.getParcelableArrayListExtra("contacts");
 
+        // If no data, set a default list
         if (contactsFromAddContactActivity != null && contactsFromAddContactActivity.size() > 0) {
             contacts = contactsFromAddContactActivity;
         } else {
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         contactsListView = (ListView) findViewById(R.id.contactsListView);
         contactsListView.setAdapter(adapter);
 
+        // Configuring floating button
         floatingButton = (FloatingActionButton) findViewById(R.id.floatingActionButton);
         floatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
